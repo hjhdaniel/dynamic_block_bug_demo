@@ -1,0 +1,80 @@
+blocks:
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    file_source:
+      path: transformers/failure_block.py
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: failure_block
+  retry_config: null
+  status: updated
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - dynamic_child
+  uuid: failure_block
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: data_loaders/dynamic_child.py
+  downstream_blocks:
+  - failure_block
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: dynamic_child
+  retry_config: null
+  status: updated
+  timeout: null
+  type: data_loader
+  upstream_blocks:
+  - dynamic_parent
+  uuid: dynamic_child
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    dynamic: true
+  downstream_blocks:
+  - dynamic_child
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: dynamic_parent
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: dynamic_parent
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config: {}
+conditionals: []
+created_at: '2024-01-12 05:51:55.011431+00:00'
+data_integration: null
+description: null
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: demo
+notification_config: {}
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+tags: []
+type: python
+updated_at: '2024-01-12T06:00:58+00:00'
+uuid: demo
+variables_dir: /Users/danielho/.mage_data/dynamic_block_bug_demo
+widgets: []
