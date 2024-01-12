@@ -53,7 +53,7 @@ AttributeError: 'NoneType' object has no attribute 'index'
 ```
 
 # Steps to run and reproduce error
-1) clone the repo
+1) clone and cd into the repo
 2) create python venv, pip install mage-ai
 ```
 pip3 install mage-ai
