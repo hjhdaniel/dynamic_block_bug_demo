@@ -54,13 +54,10 @@ AttributeError: 'NoneType' object has no attribute 'index'
 
 # Steps to run and reproduce error
 1) clone and cd into the repo
-2) create python venv (activate), pip install mage-ai
-```
-pip3 install mage-ai==0.9.59
-```
+2) run Docker
 3) run project
 ```
-mage start dynamic_block_bug_demo
+docker run -it -p 6789:6789 -v $(pwd):/home/src mageai/mageai:alpha /app/run_app.sh mage start dynamic_block_bug_demo
 ```
 4) `Run@once` the `demo` pipeline
   
