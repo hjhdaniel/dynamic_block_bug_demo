@@ -9,7 +9,12 @@ if 'test' not in globals():
 @data_loader
 def load_data_from_api(dynamic_block_num: int, *args, **kwargs):
     # step to load something from API/S3 here based on dynamic parent's output
-    return DataFrame(data={"num": [dynamic_block_num]})
+    print(type(dynamic_block_num))
+    print(dynamic_block_num)
+    output = DataFrame(data={"num": [dynamic_block_num]})
+    print("output type", type(output))
+    print("output", output)
+    return output
 
 
 @test

@@ -9,8 +9,9 @@ if 'test' not in globals():
 @transformer
 def transform_df(df: DataFrame, *args, **kwargs) -> DataFrame:
     # df here is always None when running pipeline, regardless of upstream block output
-    print(df)
-    print(df.index)
+    print("input type", type(df))
+    print("input", df)
+    print("input length", len(df.index))
     return df
 
 
